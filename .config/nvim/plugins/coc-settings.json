@@ -1,0 +1,80 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                },
+                "highlight": { "lsRanges" : true }
+            }
+        }
+    }
+}
+
+
+{
+"languageserver": {
+        "lua": {
+            "command": "/path/to/lua-language-server/bin/macOS/lua-language-server",
+            "args": ["-E", "/path/to/lua-language-server/main.lua"],
+            "filetypes": ["lua"],
+            "rootPatterns": [".git/"],
+            "settings": {
+                "Lua": {
+                    "workspace": {
+                        "library": {
+                            "/path/to/hammerspoon-completion/build/stubs": true,
+                            "/path/to/neovim/runtime/lua": true
+                        },
+                        "maxPreload": 2000,
+                        "preloadFileSize": 1000
+                    },
+                    "runtime": {
+                        "version": "Lua 5.4"
+                    },
+                    "diagnostics": {
+                        "enable": true,
+                        "globals": ["hs", "vim", "it", "describe", "before_each", "after_each"],
+                        "disable": ["lowercase-global"]
+                    },
+                    "completion": {
+                        "keywordSnippet": "Disable"
+                    }
+                }
+            }
+        }
+    }
+}
+
+{
+    "omnisharp.version": "v1.37.3",
+    "omnisharp.trace.server": "information",
+    "omnisharp.debug.server": true
+}
+
+"languageserver": {
+  "haskell": {
+    "command": "haskell-language-server-wrapper",
+    "args": ["--lsp"],
+    "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+    "filetypes": ["haskell", "lhaskell"]
+  }
+}
+
+  "languageserver": {
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": [
+        "build/"
+      ],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
+    }
+  }
+
+
